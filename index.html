@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تولدت مبارک ستایش جون🌸</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Starry background layers -->
+  <div class="bg-stars"></div>
+  <div class="bg-swirls"></div>
+  <div class="bg-vignette"></div>
+
+  <!-- Intro screen -->
+  <div id="intro" class="intro">
+    <div class="intro-inner">
+      <h1>ستایش جونم 🌸</h1>
+      <p>یه چیزی برات ساختم...</p>
+      <button id="startBtn">بزن شروع ✨</button>
+    </div>
+  </div>
+
+  <!-- Main scene -->
+  <main id="scene" class="scene hidden">
+    <h1 class="greeting">تولدت مبارک ستایش جونم :) 🎂☁️</h1>
+
+    <div id="clouds" class="clouds">
+      <!-- Clouds injected by JS -->
+    </div>
+
+    <p class="hint">روی هر ابر بزن ☁️</p>
+
+    <div id="countdown" class="countdown"></div>
+  </main>
+
+  <!-- Floating reveal card -->
+  <div id="card" class="card hidden">
+    <p id="cardText"></p>
+  </div>
+
+  <audio id="bgm" loop preload="auto">
+    <source src="audio/song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
