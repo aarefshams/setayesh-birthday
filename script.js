@@ -164,34 +164,3 @@ startBtn.addEventListener('click', () => {
   intro.classList.add('hidden');
   scene.classList.remove('hidden');
 });
-
-// ===== Countdown to Nov 27 =====
-function updateCountdown() {
-  const cd = document.getElementById('countdown');
-  const now = new Date();
-  const year = now.getMonth() === 10 && now.getDate() > 27 ? now.getFullYear() + 1 : now.getFullYear();
-  let target = new Date(year, 10, 27, 0, 0, 0); // month 10 = November
-  if (target - now <= 0) {
-    // it's the birthday (or past this year) — show a birthday message
-    const isToday = now.getMonth() === 10 && now.getDate() === 27;
-    if (isToday) {
-      cd.innerHTML = '🎉 امروز روز تولدته! 🎂';
-    } else {
-      target = new Date(year + 1, 10, 27);
-      renderCountdown(target, cd);
-    }
-    return;
-  }
-  renderCountdown(target, cd);
-}
-
-function renderCountdown(target, el) {
-  const diff = target - new Date();
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  el.textContent = `⏳ ${d} روز و ${h} ساعت و ${m} دقیقه تا تولدت`;
-}
-
-updateCountdown();
-setInterval(updateCountdown, 60000);
